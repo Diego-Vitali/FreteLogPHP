@@ -1,3 +1,36 @@
-.{
-    margin-top: 50%;
+.freteLog{
+    font-weight: bold; 
+    letter-spacing: 2px; 
+    font-size: larger; 
+    padding: 0;
+    padding-right: 10px; 
+    border-right: solid 1px white
+}
+
+.listaNav{
+    font-weight: bold; 
+    letter-spacing: 2px; 
+    font-size: large
+}
+
+.painelIndex{
+    width: 70%; 
+    border-radius: 15px; 
+    border: solid black 2px; 
+    margin-top: 10px
+}
+
+h2{
+    margin: 8%;
+    margin-top: 20px; 
+    font-weight: bold
+}
+
+h3{
+    text-align: justify;
+    margin: 8%;
+}
+
+.card{
+    text-align: center;
 }

@@ -21,7 +21,7 @@
     <div class="container">
       <a href="#" class="navbar-brand">
         <img src="libraries/Logo FL.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light freteLog" style="font-weight: bold; letter-spacing: 2px; font-size: larger; padding-right: 10px; border-right: solid 1px white">Frete Log</span>
+        <span class="brand-text font-weight-light freteLog">Frete Log</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
 
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
-        <ul class="navbar-nav" style="font-weight: bold; letter-spacing: 2px; font-size: large">
+        <ul class="navbar-nav listaNav">
           <li class="nav-item">
             <a href="#" class="nav-link">Início</a>
           </li>
@@ -59,9 +59,9 @@
     </div>
     <!-- /.content-header -->
 	<div class="card">
-		<div class="card-header" style="text-align: center">
-			<img src="libraries/caminhao.png" alt="FreteLog" style="width: 70%; border-radius: 15px; border: solid black 2px; margin-top: 10px">
-      <h2 style="margin-top: 20px; font-weight: bold">Otimize seu frete, maximize seu lucro.</h2>
+		<div class="card-header">
+			<img src="libraries/caminhao.png" alt="FreteLog" class="painelIndex">
+      <h2 class="citacao">Otimize seu frete, maximize seu lucro.</h2>
       <div class="card">
         <h3>
             Na Frete Log, entendemos que a logística eficiente é a espinha dorsal de qualquer operação bem-sucedida. Com uma equipe experiente e apaixonada por soluções logísticas, estamos aqui para transformar a forma como você gerencia o frete e os transportes da sua empresa.
