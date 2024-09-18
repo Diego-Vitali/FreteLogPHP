@@ -1,0 +1,108 @@
+.colores{
+    color: #590D22;
+    color: #800F2F;
+    color: #A4133C;
+    color: #C9184A;
+    color: #FF4D6D;
+    color: #FF758F;
+    color: #FF8FA3;
+    color: #FFB3C1;
+    color: #FFCCD5;
+    color: #FFF0F3;
+}
+
+html{
+    box-sizing: border-box !important;
+}
+
+h1{
+    padding: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+h2{
+    margin: 15px;
+    padding-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.FreteLog{
+    font-size: 2.0rem;
+    font-weight: bolder;
+    padding-inline-end: 17%;
+    border-right: white 1px solid;
+}
+
+.navbarAjuste{
+    padding-bottom: 1%;
+    border: #C9184A solid;
+    background-color: #C9184A;
+}
+
+.textoBranco{
+    margin-inline: 20px;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+}
+
+.btn{
+    background-color: #f0991f !important;
+    border: #f0991f;
+}
+
+.content-wrapper{
+    background-color: #FFF0F3 !important;
+}
+
+.content-header{
+    margin: 0;
+    margin-bottom: 20px !important;
+    width: 100%;
+    height: 100vh; /* Exemplo para ocupar 100% da altura da tela */
+    background-image: url('../libraries/Caminhao2.jpg');
+    background-size: cover; /* A imagem vai cobrir todo o espaço sem ultrapassar */
+    background-position: center; /* Centraliza a imagem no container */
+}
+
+#fretelog{
+    width: 100%;
+    background-color: #ffccd500;
+    box-shadow: 0 0 0 0;
+}
+
+#fretelog h1{
+    font-size: 3rem;
+    color: #f0991f;
+    font-weight: bolder;
+    text-shadow: 2px 2px 10px #590D22;
+}
+
+.texto-ini{
+    text-align: center;
+    margin-top: 40px;
+    margin: 30px;
+    width: 40%;
+    height:fit-content;
+    background-color: #FFF0F3;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 5px #590d2355;
+}
+
+.bloco{
+    width: 19%;
+    margin: 0;
+    margin-left: 30px;
+    display:inline-flex;
+}
+
+.btn-contato{
+    font-size: 2.0rem;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #C9184A !important;
+}
