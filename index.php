@@ -39,7 +39,7 @@
             <a href="#" class="nav-link textoBranco">Contato</a>
       	</ul>
 		<ul class="navbar-nav ml-auto">
-			<a href="pages/login.php" class="btn btn-block btn-info">Login<a>
+			<a href="transportadores.php" class="btn btn-block btn-info">Login<a>
 		</ul>
 	  </div>
     </div>
@@ -48,7 +48,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="min-height: 1145.31px;">
-    <div class="content-header">
+    <div class="content-header2 content-header">
       <div class="texto-ini" id="fretelog">
         <h1 class="m-0"> Frete Log <small>- Sistema de Gerenciamento de Transporte</small></h1>
       </div>

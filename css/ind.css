@@ -21,6 +21,20 @@ h1{
     color: black;
 }
 
+svg{
+    width: 18%;
+    margin-right: 15px;
+}
+
+.minhasidebar{
+    padding-top: 2%;
+    background-color: #C9184A !important;
+}
+
+p{
+    color: #FFF0F3 !important;
+}
+
 h2{
     margin: 15px;
     padding-top: 20px;
@@ -59,11 +73,9 @@ h2{
     background-color: #FFF0F3 !important;
 }
 
-.content-header{
+.content-header2{
     margin: 0;
     margin-bottom: 20px !important;
-    width: 100%;
-    height: 100vh; /* Exemplo para ocupar 100% da altura da tela */
     background-image: url('../libraries/Caminhao2.jpg');
     background-size: cover; /* A imagem vai cobrir todo o espaço sem ultrapassar */
     background-position: center; /* Centraliza a imagem no container */
@@ -105,4 +117,28 @@ h2{
     font-weight: bold;
     border-radius: 20px;
     background-color: #C9184A !important;
+}
+
+.table-responsive{
+    outline: auto;
+    background-color: #FFB3C1 !important;
+}
+
+th{
+    border: #590D22 solid 1px;
+}
+
+tr{
+    border: #590D22 solid 1px;
+}
+
+tbody{
+    border: #590D22 solid 2px;
+}
+thead{
+    border: #590D22 solid 2px;
+}
+
+td{
+    border: #590D22 solid 1px;
 }
