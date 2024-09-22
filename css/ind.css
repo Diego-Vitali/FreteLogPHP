@@ -64,6 +64,11 @@ h2{
     color: white;
 }
 
+.textoPreto{
+    margin-inline: 20px;
+    color: black !important;
+}
+
 .btn{
     background-color: #f0991f !important;
     border: #f0991f;
@@ -98,7 +103,7 @@ h2{
     text-align: center;
     margin-top: 40px;
     margin: 30px;
-    width: 40%;
+    width: 55%;
     height:fit-content;
     background-color: #FFF0F3;
     border-radius: 20px;
@@ -106,7 +111,7 @@ h2{
 }
 
 .bloco{
-    width: 19%;
+    width: 55%;
     margin: 0;
     margin-left: 30px;
     display:inline-flex;
@@ -141,4 +146,30 @@ thead{
 
 td{
     border: #590D22 solid 1px;
+}
+
+.main-header{
+    border: #C9184A solid;
+    background-color: #C9184A;
+}
+
+.nav-link{
+    color: #FFF0F3 !important;
+}
+
+.cardRosa{
+    background-color: #FFCCD5   ;
+}
+
+.carousel-indicators{
+    transform: translateY(40px);
+}
+
+span{
+    margin: 20px !important;
+}
+
+.fas{
+    background-color: black !important;
+    transform: translateY(80px);
 }
