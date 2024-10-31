@@ -3,7 +3,8 @@
                   <thead>
                     <tr>
                       <th>CNPJ</th>
-                      <th>Transportadora</th>
+                      <th>Embarcador</th>
+                      <th>Segmento</th>
                       <th>Cidade</th>
                       <th>Estado</th>
                       <th>Status</th>

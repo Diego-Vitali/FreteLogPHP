@@ -2,11 +2,9 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>CNPJ</th>
-                      <th>Transportadora</th>
-                      <th>Cidade</th>
-                      <th>Estado</th>
-                      <th>Status</th>
+                      <th>Numero NF</th>
+                      <th>Embarcador</th>
+                      <th>Transportador</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -14,29 +12,21 @@
                       <td>183</td>
                       <td>Repolho Transportes</td>
                       <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Ativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     </tr>
                     <tr>
                       <td>219</td>
                       <td>Alface LTDA</td>
                       <td>11-7-2014</td>
-                      <td><span class="tag tag-sucess">Ativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     </tr>
                     <tr>
                       <td>657</td>
                       <td>Tomate Logística</td>
                       <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Inativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     </tr>
                     <tr>
                       <td>175</td>
                       <td>Cebola</td>
                       <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Inativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     </tr>
                   </tbody>
                 </table>
