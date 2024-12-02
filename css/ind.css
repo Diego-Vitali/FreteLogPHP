@@ -173,3 +173,7 @@ span{
     background-color: black !important;
     transform: translateY(80px);
 }
+
+.login-page{
+    background-color: #FFF0F3 !important;
+}

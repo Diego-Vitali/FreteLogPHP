@@ -30,6 +30,7 @@
           <div class="col-sm-6">
             <h1>Listagem de Transportadores</h1>
           </div>
+          <a href="addTr.php" style="margin-left:140vh" class="btn">Adicionar Transportador</a>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -58,7 +59,6 @@
 <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="adminlte/dist/js/demo.js"></script>
+
 </body>
 </html>

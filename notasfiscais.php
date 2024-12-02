@@ -30,7 +30,7 @@
           <div class="col-sm-6">
             <h1>Listagem de Notas Fiscais</h1>
           </div>
-          <a href="addNF.php" style="margin-left:150vh" class="btn">Adicionar Nota Fiscal</a>
+          <a href="addNF.php" style="margin-left:140vh" class="btn">Adicionar Nota Fiscal</a>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -59,7 +59,6 @@
 <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="adminlte/dist/js/demo.js"></script>
+
 </body>
 </html>

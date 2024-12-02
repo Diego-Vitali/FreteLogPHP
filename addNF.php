@@ -13,6 +13,31 @@
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
   <!-- CSS Próprio-->
   <link rel="stylesheet" href="css\ind.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+      function mascaraCNPJ(cnpj) {
+          cnpj = cnpj.replace(/\D/g, ""); 
+          cnpj = cnpj.replace(/^(\d{2})(\d)/, "$1.$2");
+          cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+          cnpj = cnpj.replace(/\.(\d{3})(\d)/, ".$1/$2");
+          cnpj = cnpj.replace(/(\d{4})(\d)/, "$1-$2");
+          return cnpj;
+      }
+
+      $(document).ready(function() {
+          $("#cnpj").on("input", function() {
+              this.value = mascaraCNPJ(this.value);
+          });
+          
+      });
+      $(document).ready(function() {
+          $("#cnpj2").on("input", function() {
+              this.value = mascaraCNPJ(this.value);
+          });
+          
+      });
+  </script>
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -21,22 +46,23 @@
 <?php include 'includes\component\navbar.php'?>
 <?php include 'includes\component\sidebar.php'?>
 
-  <!-- Content Wrapper. Contains page content -->
+
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Adicionar NF</h1>
+            <h1>Adicionar Notas Fiscais</h1>
           </div>
+          <a href="notasfiscais.php" style="margin-left:140vh" class="btn">Retornar a Listagem</a>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form action=""></form>
+    <?php include 'includes/component/createNF.php' ?>
 
     </section>
     <!-- /.content -->
@@ -58,7 +84,6 @@
 <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="adminlte/dist/js/demo.js"></script>
+
 </body>
 </html>

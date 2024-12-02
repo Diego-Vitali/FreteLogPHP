@@ -1,3 +1,8 @@
+<?php
+  include './CRUDs/bd.php';
+  $sql = "SELECT * FROM Embarcadores";
+  $result = $conn->query($sql);
+?>
 <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                   <thead>
@@ -8,37 +13,36 @@
                       <th>Cidade</th>
                       <th>Estado</th>
                       <th>Status</th>
+                      <th>Ações</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>183</td>
-                      <td>Repolho Transportes</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Ativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alface LTDA</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-sucess">Ativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Tomate Logística</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Inativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Cebola</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Inativo</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                  <?php
+                      if ($result->num_rows > 0) {
+                          while ($row = $result->fetch_assoc()) {
+                              echo "<tr>";
+                              echo "<td>" . $row['cnpjEmb'] . "</td>";
+                              echo "<td>" . $row['nomeEmb'] . "</td>";
+                              echo "<td>" . $row['segmentoEmb'] . "</td>";
+                              echo "<td>" . $row['cidadeEmb'] . "</td>";
+                              echo "<td>" . $row['estadoEmb'] . "</td>";
+                              echo "<td>" . $row['statusEmb'] . "</td>";
+                              echo "<td>";
+                              echo "<form action='./ediEmb.php' method='GET' style='display:inline;'>";
+                              echo "<input type='hidden' name='cnpjEmb' value='" . $row['cnpjEmb'] . "' />";
+                              echo "<button type='submit' class='btn btn-warning btn-sm textoPreto'>Editar</button>";
+                              echo "</form>";
+                              echo "<form action='./CRUDs/excEmbarc.php' method='POST' style='display:inline;'>";
+                              echo "<input type='hidden' name='cnpjEmb' value='" . $row['cnpjEmb'] . "' />";
+                              echo "<button type='submit' class='btn btn-danger btn-sm textoPreto' onclick='return confirm(\"Tem certeza que deseja excluir este embarcador?\");'>Excluir</button>";
+                              echo "</form>";
+                              echo "</td>";
+                              echo "</tr>";
+                          }
+                      } else {
+                          echo "<tr><td colspan='7'>Nenhum embarcador encontrado.</td></tr>";
+                      }
+                    ?>
                   </tbody>
                 </table>
               </div>

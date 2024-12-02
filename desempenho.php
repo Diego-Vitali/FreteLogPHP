@@ -1,3 +1,49 @@
+<?php
+class Database {
+    private $host = 'localhost';
+    private $db_name = 'FreteLog';
+    private $username = 'root'; 
+    private $password = ''; 
+    public $conn;
+
+    public function getConnection() {
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
+
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+
+        return $this->conn;
+    }
+}
+
+class Transportador {
+    private $conn;
+    private $table_name = "NotasFiscais";
+
+    public function __construct($db) {
+        $this->conn = $db;
+    }
+
+    public function getTransportadorData() {
+        $query = "SELECT cnpjTrNF, COUNT(*) as quantidade 
+                  FROM " . $this->table_name . " 
+                  GROUP BY cnpjTrNF 
+                  ORDER BY quantidade DESC";
+
+        $result = $this->conn->query($query);
+        $data = [];
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+        }
+
+        return $data;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +60,15 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="./adminlte/dist/css/adminlte.min.css">
   <!-- CSS Próprio-->
-  <link rel="stylesheet" href="./css\ind.css">
+  <link rel="stylesheet" href="./css/ind.css">
   <script src="adminlte/plugins/chart.js/Chart.min.js"></script>
-
-
-
-
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php include 'includes\component\navbar.php'?>
-<?php include 'includes\component\sidebar.php'?>
+<?php include 'includes/component/navbar.php'?>
+<?php include 'includes/component/sidebar.php'?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -43,13 +85,48 @@
 
     <!-- Main content -->
     <section class="content">
-    <?php include 'includes\component\grafico1.php'?>
+    <?php 
+        $database = new Database();
+        $db = $database->getConnection();
+
+        $transportador = new Transportador($db);
+        $dadosTransportador = $transportador->getTransportadorData();
+
+        $labels = [];
+        $quantidades = [];
+        foreach ($dadosTransportador as $row) {
+            $labels[] = $row['cnpjTrNF'];
+            $quantidades[] = $row['quantidade'];
+        }
+    ?>
+    <div class="card card-danger">
+        <div class="card-header">
+            <h3 class="card-title">Desempenho Geral</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="chartjs-size-monitor">
+ <div class="chartjs-size-monitor-expand">
+                <div class=""></div>
+            </div>
+            <div class="chartjs-size-monitor-shrink">
+                <div class=""></div>
+            </div>
+        </div>
+        <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block;" width="486" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+    </div>
 
     </section>
     <!-- /.content -->
   </div>
 
-  <?php include 'includes\component\footer.php' ?> 
+  <?php include 'includes/component/footer.php' ?> 
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -69,38 +146,25 @@
 <script src="adminlte/dist/js/demo.js"></script>
 
 <script>
-//-------------
-    //- DONUT CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-    var donutData        = {
-      labels: [
-          'Chrome',
-          'IE',
-          'FireFox',
-          'Safari',
-          'Opera',
-          'Navigator',
-      ],
-      datasets: [
-        {
-          data: [700,500,400,600,300,100],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-        }
-      ]
-    }
-    var donutOptions     = {
-      maintainAspectRatio : false,
-      responsive : true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    new Chart(donutChartCanvas, {
-      type: 'doughnut',
-      data: donutData,
-      options: donutOptions
-    })
+    $(function () {
+        var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
+        var donutData = {
+            labels: <?php echo json_encode($labels); ?>,
+            datasets: [{
+                data: <?php echo json_encode($quantidades); ?>,
+                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+            }]
+        };
+        var donutOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+        };
+        new Chart(donutChartCanvas, {
+            type: 'doughnut',
+            data: donutData,
+            options: donutOptions
+        });
+    });
 </script>
 </body>
 </html>

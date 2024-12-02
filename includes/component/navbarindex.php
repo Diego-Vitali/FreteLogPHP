@@ -20,7 +20,7 @@
             <a href="contato.php" class="nav-link textoBranco">Contato</a>
       	</ul>
 		<ul class="navbar-nav ml-auto">
-			<a href="transportadores.php" class="btn btn-block btn-info">Login<a>
+			<a href="login.php" class="btn btn-block btn-info">Login<a>
 		</ul>
 	  </div>
     </div>

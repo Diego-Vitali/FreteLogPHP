@@ -1,17 +1,23 @@
 CREATE DATABASE FreteLog;
 USE FreteLog;
 
+CREATE TABLE USUARIOS(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NomeUsu VARCHAR(50) UNIQUE,
+    SenhaUsu VARCHAR(50)
+);
+
 CREATE TABLE Transportadores(
-	cnpjTr INT PRIMARY KEY,
+	cnpjTr VARCHAR(18) PRIMARY KEY,
     nomeTr VARCHAR(50),
     cidadeTr VARCHAR(30),
     estadoTr VARCHAR(30),
     statusTr VARCHAR(10),
-    CHECK (statusTr IN ('ativo', 'inativo'))
+    CHECK (statusTr IN ('ativo', 'inativo', 'Ativo', 'Inativo'))
 );
 
 CREATE TABLE Embarcadores(
-	cnpjEmb INT PRIMARY KEY,
+	cnpjEmb VARCHAR(18) PRIMARY KEY,
     nomeEmb VARCHAR(50),
     segmentoEmb VARCHAR(50),
     cidadeEmb VARCHAR(30),
@@ -22,8 +28,12 @@ CREATE TABLE Embarcadores(
 
 CREATE TABLE NotasFiscais(
 	numNF INT PRIMARY KEY,
-    cnpjEmbNF INT,
-    cnpjTrNF INT,
+    cnpjEmbNF VARCHAR(18),
+    cnpjTrNF VARCHAR(18),
     FOREIGN KEY (cnpjEmbNF) REFERENCES Embarcadores(cnpjEmb),
     FOREIGN KEY (cnpjTrNF) REFERENCES Transportadores(cnpjTr)
 );
+
+select * from embarcadores;
+
+-- DROP DATABASE FRETELOG;
