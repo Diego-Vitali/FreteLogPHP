@@ -29,9 +29,7 @@ CREATE TABLE Embarcadores(
 CREATE TABLE NotasFiscais(
 	numNF INT PRIMARY KEY,
     cnpjEmbNF VARCHAR(18),
-    cnpjTrNF VARCHAR(18),
-    FOREIGN KEY (cnpjEmbNF) REFERENCES Embarcadores(cnpjEmb),
-    FOREIGN KEY (cnpjTrNF) REFERENCES Transportadores(cnpjTr)
+    cnpjTrNF VARCHAR(18)
 );
 
 select * from embarcadores;
